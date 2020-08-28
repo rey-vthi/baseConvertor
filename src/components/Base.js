@@ -10,12 +10,10 @@ class Base extends React.Component {
   }
 
   handleChange(event) {
+    const {number, base} = this.props;
     const value = +event.target.value;
-    const number = isValid(value, this.props.base)
-      ? parseInt(value, this.props.base)
-      : this.props.number;
-
-    this.props.onChange(number);
+    const newValue = isValid(value, base) ? parseInt(value, base) : number;
+    this.props.onChange(newValue);
   }
 
   render() {
