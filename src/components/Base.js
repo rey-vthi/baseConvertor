@@ -22,7 +22,7 @@ class Base extends React.Component {
     const {number, base} = this.props;
     return (
       <div>
-        <label>Base {this.props.base}</label>
+        <label>Base {base}</label>
         <input value={number.toString(base)} onChange={this.handleChange} />
       </div>
     );
